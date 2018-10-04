@@ -8,31 +8,72 @@
 		android:orientation="vertical"
 		android:minWidth="25px"
 		android:minHeight="25px"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/linearLayout1" >
-		<Button
-			android:text="Button"
-			android:layout_width="match_parent"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/linearLayout1">
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_alignParentTop="true"
+			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/button1" />
+			android:id="@+id/linearLayout2">
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_weight="1"
+				android:layout_height="match_parent"
+				android:id="@+id/CitySearch" />
+			<Button
+				android:text="Search"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="right"
+				android:id="@+id/button1" />
+		</LinearLayout>
 		<TextView
-			android:text="Large Text"
+			android:text=""
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/textView1" />
+			android:id="@+id/textView1"
+			android:gravity="center" />
 		<TextView
-			android:text="Large Text"
+			android:text=""
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/textView2" />
+			android:id="@+id/textView2"
+			android:gravity="center"
+			android:layout_marginTop="100dp" />
 		<TextView
-			android:text="Large Text"
+			android:text=""
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/textView3" />
+			android:id="@+id/textView5"
+			android:gravity="center" />
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_marginTop="275dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout3">
+			<TextView
+				android:text=""
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/textView3" />
+			<TextView
+				android:text=""
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="right"
+				android:id="@+id/textView4" />
+		</LinearLayout>
 	</LinearLayout>
 </RelativeLayout>
