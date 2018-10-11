@@ -22,19 +22,23 @@ namespace WeatherApp
 
         private async void Button_Click(object sender, System.EventArgs e)
         {
-            var textview1 = FindViewById<TextView>(Resource.Id.textView1);
-            var textview2 = FindViewById<TextView>(Resource.Id.textView2);
-            var textview3 = FindViewById<TextView>(Resource.Id.textView3);
-            var textview4 = FindViewById<TextView>(Resource.Id.textView4);
-            var textview5 = FindViewById<TextView>(Resource.Id.textView5);
+            var Title = FindViewById<TextView>(Resource.Id.Title);
+            var Temp = FindViewById<TextView>(Resource.Id.Temp);
+            var Speed = FindViewById<TextView>(Resource.Id.speed);
+            var Press = FindViewById<TextView>(Resource.Id.press);
+            var Icon = FindViewById<ImageView>(Resource.Id.imageView1);
             var citySearch = FindViewById<EditText>(Resource.Id.CitySearch);
 
             var weather = await Core.Core.GetWeather(citySearch.Text);
-            textview1.Text = weather.Title;
-            textview2.Text = weather.Temperature;
-            textview3.Text = weather.Wind;
-            textview4.Text = weather.AirPressure;
-            textview5.Text = weather.Main;
+            Title.Text = weather.Title;
+            Temp.Text = weather.Temperature;
+            Speed.Text = weather.Wind;
+            Press.Text = weather.AirPressure;
+            switch (weather.Main)
+            {
+                default:
+                    break;
+            }
         }
     }
 }
