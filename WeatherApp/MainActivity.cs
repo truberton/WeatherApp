@@ -3,6 +3,9 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Android.Graphics;
+using System.Net;
+using System;
 
 namespace WeatherApp
 {
@@ -34,8 +37,45 @@ namespace WeatherApp
             Temp.Text = weather.Temperature;
             Speed.Text = weather.Wind;
             Press.Text = weather.AirPressure;
+
             switch (weather.Main)
             {
+                case "01d":
+                case "01n":
+                    Icon.SetImageResource(Resource.Drawable._01d);
+                    break;
+                case "02d":
+                case "02n":
+                    Icon.SetImageResource(Resource.Drawable._02d);
+                    break;
+                case "03d":
+                case "03n":
+                    Icon.SetImageResource(Resource.Drawable._03d);
+                    break;
+                case "04d":
+                case "04n":
+                    Icon.SetImageResource(Resource.Drawable._04d);
+                    break;
+                case "09d":
+                case "09n":
+                    Icon.SetImageResource(Resource.Drawable._09d);
+                    break;
+                case "10d":
+                case "10n":
+                    Icon.SetImageResource(Resource.Drawable._10d);
+                    break;
+                case "11d":
+                case "11n":
+                    Icon.SetImageResource(Resource.Drawable._11d);
+                    break;
+                case "13d":
+                case "13n":
+                    Icon.SetImageResource(Resource.Drawable._13d);
+                    break;
+                case "50d":
+                case "50n":
+                    Icon.SetImageResource(Resource.Drawable._50d);
+                    break;
                 default:
                     break;
             }
