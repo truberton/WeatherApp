@@ -12,5 +12,6 @@ namespace WeatherApp.Core
         public string Wind { get; set; } = " ";
         public string Main { get; set; } = " ";
         public string AirPressure { get; set; } = " ";
+        public string Date { get; set; } = " ";
     }
 }

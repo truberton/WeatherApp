@@ -6,6 +6,9 @@ using Android.Widget;
 using Android.Graphics;
 using System.Net;
 using System;
+using System.Collections.Generic;
+using Android.Content;
+using System.Threading.Tasks;
 
 namespace WeatherApp
 {
@@ -19,8 +22,27 @@ namespace WeatherApp
             SetContentView(Resource.Layout.activity_main);
 
             var button = FindViewById<Button>(Resource.Id.button1);
+            var button2 = FindViewById<Button>(Resource.Id.button2);
 
             button.Click += Button_Click;
+            button2.Click += Button2_Click;
+        }
+
+        private async void Button2_Click(object sender, System.EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(FindViewById<TextView>(Resource.Id.Title).Text))
+            {
+                await GetForecast();
+                var fiveDay = new Intent(this, typeof(FiveDay));
+                StartActivity(fiveDay); 
+            }
+        }
+
+        private async Task<List<Core.Weather>> GetForecast()
+        {
+            List<Core.Weather> weather = await Core.FiveDayCore.GetWeather(FindViewById<EditText>(Resource.Id.CitySearch).Text);
+            Core.Weathers.weathers = weather;
+            return weather;
         }
 
         private async void Button_Click(object sender, System.EventArgs e)
