@@ -32,14 +32,14 @@
 				android:id="@+id/button1" />
 		</LinearLayout>
 		<TextView
-			android:text="Title"
+			android:text=""
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/Title"
 			android:gravity="center" />
 		<TextView
-			android:text="Temp"
+			android:text=""
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
