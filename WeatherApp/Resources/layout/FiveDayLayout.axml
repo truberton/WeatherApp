@@ -17,7 +17,15 @@
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/STemp" />
+			android:id="@+id/SDate"
+			android:layout_alignParentLeft="true" />
+		<TextView
+			android:text="Large Text"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/STemp"
+			android:layout_centerInParent="true" />
 		<TextView
 			android:text="Large Text"
 			android:textAppearance="?android:attr/textAppearanceLarge"

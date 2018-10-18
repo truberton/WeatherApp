@@ -17,7 +17,6 @@ namespace WeatherApp
             var list = FindViewById<ListView>(Resource.Id.listView1);
             List<Core.Weather> weathers = Core.Weathers.weathers;
             list.Adapter = new Adapter(this, weathers);
-            //list.ItemClick += ListView_ItemClick;
         }
     }
 }

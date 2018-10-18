@@ -32,16 +32,16 @@ namespace WeatherApp
         {
             if (!string.IsNullOrWhiteSpace(FindViewById<TextView>(Resource.Id.Title).Text))
             {
-                //try
-                //{
+                try
+                {
                     await GetForecast();
                     var fiveDayActivity = new Intent(this, typeof(FiveDayActivity));
                     StartActivity(fiveDayActivity);
-                //}
-                //catch (Exception)
-                //{
-                //    Toast.MakeText(Application, "Something is wrong, please try again", ToastLength.Long).Show();
-                //}
+                }
+                catch (Exception)
+                {
+                    Toast.MakeText(Application, "Something is wrong, please try again", ToastLength.Long).Show();
+                }
             }
         }
 
@@ -54,15 +54,14 @@ namespace WeatherApp
 
         private async void Button_Click(object sender, System.EventArgs e)
         {
+            var Title = FindViewById<TextView>(Resource.Id.Title);
+            var Temp = FindViewById<TextView>(Resource.Id.Temp);
+            var Speed = FindViewById<TextView>(Resource.Id.speed);
+            var Press = FindViewById<TextView>(Resource.Id.press);
+            var Icon = FindViewById<ImageView>(Resource.Id.imageView1);
+            var citySearch = FindViewById<EditText>(Resource.Id.CitySearch);
             try
             {
-                var Title = FindViewById<TextView>(Resource.Id.Title);
-                var Temp = FindViewById<TextView>(Resource.Id.Temp);
-                var Speed = FindViewById<TextView>(Resource.Id.speed);
-                var Press = FindViewById<TextView>(Resource.Id.press);
-                var Icon = FindViewById<ImageView>(Resource.Id.imageView1);
-                var citySearch = FindViewById<EditText>(Resource.Id.CitySearch);
-
                 var weather = await Core.Core.GetWeather(citySearch.Text);
                 Title.Text = weather.Title;
                 Temp.Text = weather.Temperature;
