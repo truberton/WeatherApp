@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace WeatherApp.Core
 {
@@ -9,8 +6,7 @@ namespace WeatherApp.Core
     {
         public static async Task<Weather> GetWeather(string City)
         {
-            string key = "ef0b32214b6a100ab1811e267f5e7feb";
-            string queryString = "http://api.openweathermap.org/data/2.5/weather?q=" + City + "&units=metric&appid=" + key;
+            string queryString = "http://api.openweathermap.org/data/2.5/weather?q=" + City + "&units=metric&appid=ef0b32214b6a100ab1811e267f5e7feb";
 
             dynamic results = await DataService.GetDataFromService(queryString).ConfigureAwait(false);
             var weather = new Weather();

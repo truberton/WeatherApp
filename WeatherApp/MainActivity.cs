@@ -1,10 +1,7 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Runtime;
 using Android.Widget;
-using Android.Graphics;
-using System.Net;
 using System;
 using System.Collections.Generic;
 using Android.Content;
@@ -28,30 +25,6 @@ namespace WeatherApp
             button2.Click += Button2_Click;
         }
 
-        private async void Button2_Click(object sender, System.EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(FindViewById<TextView>(Resource.Id.Title).Text))
-            {
-                try
-                {
-                    await GetForecast();
-                    var fiveDayActivity = new Intent(this, typeof(FiveDayActivity));
-                    StartActivity(fiveDayActivity);
-                }
-                catch (Exception)
-                {
-                    Toast.MakeText(Application, "Something is wrong, please try again", ToastLength.Long).Show();
-                }
-            }
-        }
-
-        private async Task<List<Core.Weather>> GetForecast()
-        {
-            List<Core.Weather> weather = await Core.FiveDayCore.GetWeather(FindViewById<EditText>(Resource.Id.CitySearch).Text);
-            Core.Weathers.weathers = weather;
-            return weather;
-        }
-
         private async void Button_Click(object sender, System.EventArgs e)
         {
             var Title = FindViewById<TextView>(Resource.Id.Title);
@@ -60,6 +33,7 @@ namespace WeatherApp
             var Press = FindViewById<TextView>(Resource.Id.press);
             var Icon = FindViewById<ImageView>(Resource.Id.imageView1);
             var citySearch = FindViewById<EditText>(Resource.Id.CitySearch);
+
             try
             {
                 var weather = await Core.Core.GetWeather(citySearch.Text);
@@ -115,5 +89,31 @@ namespace WeatherApp
                 Toast.MakeText(Application, "That city does not exist or something else went wrong", ToastLength.Long).Show();
             }
         }
+
+        private async void Button2_Click(object sender, System.EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(FindViewById<TextView>(Resource.Id.Title).Text))
+            {
+                try
+                {
+                    await GetForecast();
+                    var fiveDayActivity = new Intent(this, typeof(FiveDayActivity));
+                    StartActivity(fiveDayActivity);
+                }
+                catch (Exception)
+                {
+                    Toast.MakeText(Application, "Something is wrong, please enter the city again and try once more", ToastLength.Long).Show();
+                }
+            }
+        }
+
+        private async Task<List<Core.Weather>> GetForecast()
+        {
+            List<Core.Weather> weather = await Core.FiveDayCore.GetWeather(FindViewById<EditText>(Resource.Id.CitySearch).Text);
+            Core.Weathers.weathers = weather;
+
+            return weather;
+        }
+
     }
 }
