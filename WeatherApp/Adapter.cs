@@ -42,7 +42,7 @@ namespace WeatherApp
                 view = context.LayoutInflater.Inflate(Resource.Layout.FiveDayLayout, null);
 
             view.FindViewById<TextView>(Resource.Id.STemp).Text = items[position].Temperature;
-            view.FindViewById<TextView>(Resource.Id.STemp).Text = items[position].Main;
+            view.FindViewById<TextView>(Resource.Id.SType).Text = items[position].Main;
 
             return view;
         }
