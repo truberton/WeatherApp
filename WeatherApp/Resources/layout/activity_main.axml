@@ -1,81 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-	<LinearLayout
-		android:orientation="vertical"
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:minWidth="25px"
+	android:minHeight="25px">
+	<RelativeLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/relativeLayout1">
+		<EditText
+			android:layout_width="255.0dp"
+			android:layout_height="wrap_content"
+			android:id="@+id/CitySearch" />
+		<Button
+			android:text="Search"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/CitySearch"
+			android:id="@+id/button1"
+			android:layout_alignParentRight="true" />
+	</RelativeLayout>
+	<TextView
+		android:text=""
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/relativeLayout1"
+		android:id="@+id/Title"
+		android:layout_centerInParent="true" />
+	<TextView
+		android:text=""
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/Title"
+		android:id="@+id/Temp"
+		android:layout_centerInParent="true"
+		android:layout_marginTop="100dp" />
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/Temp"
+		android:id="@+id/imageView1"
+		android:layout_centerInParent="true" />
+	<RelativeLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:id="@+id/linearLayout1">
-		<LinearLayout
-			android:orientation="horizontal"
-			android:minWidth="25px"
-			android:minHeight="25px"
-			android:layout_alignParentTop="true"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/linearLayout2">
-			<EditText
-				android:layout_width="wrap_content"
-				android:layout_weight="1"
-				android:layout_height="match_parent"
-				android:id="@+id/CitySearch" />
-			<Button
-				android:text="Search"
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:gravity="right"
-				android:id="@+id/button1" />
-		</LinearLayout>
+		android:layout_height="wrap_content"
+		android:layout_below="@id/Temp"
+		android:id="@+id/relativeLayout2"
+		android:layout_alignParentBottom="true" >
 		<TextView
 			android:text=""
 			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/Title"
-			android:gravity="center" />
-		<TextView
-			android:text=""
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/Temp"
-			android:gravity="center"
-			android:layout_marginTop="100dp" />
-		<ImageView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/imageView1" />
-		<LinearLayout
-			android:orientation="horizontal"
-			android:minWidth="25px"
-			android:minHeight="25px"
-			android:layout_marginTop="245dp"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/linearLayout3">
-			<TextView
-				android:text=""
-				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:id="@+id/speed" />
-			<TextView
-				android:text=""
-				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:gravity="right"
-				android:id="@+id/press" />
-		</LinearLayout>
+			android:id="@+id/speed"
+			android:layout_alignParentBottom="true" />
 		<Button
-			android:text="5-Day forecast"
-			android:layout_width="match_parent"
+			android:text="5-Day Forecast"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/button2" />
-	</LinearLayout>
+			android:id="@+id/button2"
+			android:layout_alignParentBottom="true"
+			android:layout_centerInParent="true" />
+		<TextView
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/press"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true" />
+	</RelativeLayout>
 </RelativeLayout>
