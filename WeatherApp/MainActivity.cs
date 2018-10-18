@@ -32,16 +32,16 @@ namespace WeatherApp
         {
             if (!string.IsNullOrWhiteSpace(FindViewById<TextView>(Resource.Id.Title).Text))
             {
-                try
-                {
+                //try
+                //{
                     await GetForecast();
-                    var fiveDay = new Intent(this, typeof(FiveDay));
-                    StartActivity(fiveDay);
-                }
-                catch (Exception)
-                {
-                    Toast.MakeText(Application, "Something is wrong, please try again", ToastLength.Long).Show();
-                }
+                    var fiveDayActivity = new Intent(this, typeof(FiveDayActivity));
+                    StartActivity(fiveDayActivity);
+                //}
+                //catch (Exception)
+                //{
+                //    Toast.MakeText(Application, "Something is wrong, please try again", ToastLength.Long).Show();
+                //}
             }
         }
 
