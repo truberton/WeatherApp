@@ -38,7 +38,8 @@ namespace WeatherApp
                 view = context.LayoutInflater.Inflate(Resource.Layout.FiveDayLayout, null);
             }
             DateTime date = Convert.ToDateTime(weathers[position].Date);
-            view.FindViewById<TextView>(Resource.Id.SDate).Text = date.ToString("dddd HH:mm");
+            string day = date.ToString("dddd").Substring(0, 3) + " " + date.ToString("HH:mm");
+            view.FindViewById<TextView>(Resource.Id.SDate).Text = day;
             view.FindViewById<TextView>(Resource.Id.STemp).Text = weathers[position].Temperature;
             view.FindViewById<TextView>(Resource.Id.SType).Text = weathers[position].Main;
 
