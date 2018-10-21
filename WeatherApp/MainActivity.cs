@@ -42,7 +42,7 @@ namespace WeatherApp
                 Speed.Text = weather.Wind;
                 Press.Text = weather.AirPressure;
 
-                switch (weather.Main)
+                switch (weather.Icon)
                 {
                     case "01d":
                     case "01n":
