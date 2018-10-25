@@ -6,23 +6,45 @@ using System;
 using System.Collections.Generic;
 using Android.Content;
 using System.Threading.Tasks;
+using Android.Views;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace WeatherApp
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    [Activity(Label = "@string/app_name", Theme = "@style/MaxTheme", MainLauncher = true)]
+    public class MainActivity : Activity 
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            AppCenter.Start("2914a09a-f9d1-4805-9224-ec27c2c54ef6",
+                   typeof(Analytics), typeof(Crashes));
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar1);
+            SetActionBar(toolbar);
 
             var button = FindViewById<Button>(Resource.Id.button1);
             var button2 = FindViewById<Button>(Resource.Id.button2);
 
             button.Click += Button_Click;
             button2.Click += Button2_Click;
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.top_menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            Toast.MakeText(this, "Action selected: " + item.TitleFormatted,
+        ToastLength.Short).Show();
+            return base.OnOptionsItemSelected(item);
         }
 
         private async void Button_Click(object sender, System.EventArgs e)

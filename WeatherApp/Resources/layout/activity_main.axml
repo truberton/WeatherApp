@@ -7,9 +7,14 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px">
+	<include 
+		android:id="@+id/toolbar"
+		layout="@layout/toptoolbar"
+	/>
 	<RelativeLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
+		android:layout_marginTop="100dp"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:id="@+id/relativeLayout1">
