@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using Android.Content;
 using System.Threading.Tasks;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace WeatherApp
 {
@@ -14,6 +17,7 @@ namespace WeatherApp
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            AppCenter.Start("2914a09a-f9d1-4805-9224-ec27c2c54ef6", typeof(Analytics), typeof(Crashes));
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
